@@ -1,0 +1,5 @@
+.post
+  %ul
+    -posts.each do |post|
+      %li
+        %a{:href=>"#{post[:path]}"} #{post[:title]}

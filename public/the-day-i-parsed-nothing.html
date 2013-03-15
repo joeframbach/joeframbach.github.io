@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Joe Frambach The Day I Parsed Nothing</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+    <link href='/assets/style.css' rel='stylesheet' type='text/css' />
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
+    <script src='/assets/script.js' type='text/javascript'></script>
+    <script async='true' src='//joeframbach.disqus.com/embed.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <h1>
+        <a href='/'>Joe Frambach</a>
+      </h1>
+      <ul id='navigation'>
+        <li>
+          <a href='/about'>About</a>
+        </li>
+        <li>
+          <a href='/posts'>Posts</a>
+        </li>
+      </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+  <h2>
+    <a href='the-day-i-parsed-nothing'>The Day I Parsed Nothing</a>
+  </h2>
+  <blockquote>
+<p>supposeditypedallmypostslikethiswithnopunctuationnorwordboundariesyouwouldstillbeabletofigureoutthegistofwhatimtryingtosay</p>
+</blockquote>
+
+<p>It&#39;s somewhat easy for you to read that, if you&#39;re a native English speaker. Try this one out.</p>
+
+<blockquote>
+<p>iefterf&ouml;ljandebladharjags&ouml;kttecknaendelafdest&auml;mningarochk&auml;nslorhvilkaliktunderbaranyaf&aring;glarsv&auml;fvakringgr&auml;nsenmellanbarndomochungdom</p>
+</blockquote>
+
+<p>Give up? That&#39;s okay; I have no idea what it says either, I don&#39;t know Swedish. Although this raises another question: Can a machine figure it out, with a large enough training set? A few weeks ago I posed this problem to a coworker, and here&#39;s what resulted after an hour or so.</p>
+
+<p><figure><a href='/images/the-day-i-parsed-nothing-bigrams.png'><img src='/images/the-day-i-parsed-nothing-bigrams.png' alt='Bigrams' /></a><figcaption>Bigram counts for Alice in Wonderland, base 16 for smaller display size.</figcaption></figure></p>
+
+<p>In short, this means that the letter-pair &quot;ha&quot; appeared 4fd16 (1277) times, while &quot;xh&quot; appeared once. Most likely, that &quot;xh&quot; appeared at a word boundary, i.e., one word ended with x and the next word began with h (&quot;...trying to box her own ears...&quot;). The idea here is that low bigram counts correspond to word boundaries.</p>
+
+<p>There are 107716 characters (a-z) in the text, so given an average word-length of 8 (I made that up), there should be 13464 words. This next part is tricky. A ‘threshold&#39; must be found. Any bigram with a count fewer than the threshold will have a word boundary inserted, and any bigram with a count higher than the threshold will be part of a word. I&#39;ll cut to the chase: k&lt;=133 (8516) provides 13490 word boundaries (see the above table, find the cumulative sum for k&lt;=133 yourself if you&#39;d like).</p>
+
+<p><strong>Results</strong></p>
+<div class="CodeRay">
+  <div class="code"><pre>downtherab b itholealicewas begin ningto get verytiredof sitting&#x000A;b y hersisterontheb an k andof hav ing nothingtodoonceortwiceshehad&#x000A;peepedintothebook hersister was reading butithadno pic turesor&#x000A;con versationsinitandwhatisthe useofabook thoughtalicewithout&#x000A;pic turesor con versationsoshewas consideringin herown&#x000A;mindaswellasshecould forthehot day madeher feel verys leep&#x000A;yandstupidwhetherthepleasureof ma kingadais y chain&#x000A;wouldbeworththetrou b leof getting upand pickingthedaisieswhensu</pre></div>
+</div>
+
+<p>You get the point: It didn&#39;t really work out so well. As I was skimming through the results, I found this gem:</p>
+<div class="CodeRay">
+  <div class="code"><pre>goingoutalto gether li keacand lei wonder whatishouldbeli&#x000A;kethenandshetriedtofanc y whatthef lameofacand leis li&#x000A;kea fterthecand leis b lownout forshecouldnotremem bereverhav&#x000A;ingseensuchathinga ftera whilefindingthat nothing&#x000A;morehap penedshedec idedongoingintothegardenatoncebutalas&#x000A;for pooralicewhenshegottothedoorshefoundshehad for</pre></div>
+</div>
+
+<p>Oh wow, check it out. I parsed <em>nothing</em>!</p>
+  <div class='load-comments' data-disqus-identifier='the-day-i-parsed-nothing' data-shortname='the-day-i-parsed-nothing'>Load Comments</div>
+</div>
+    </div>
+    <div id='footer'></div>
+  </body>
+</html>

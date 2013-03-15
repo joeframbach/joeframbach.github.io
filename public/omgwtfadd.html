@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Joe Frambach OMGWTFADD</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+    <link href='/assets/style.css' rel='stylesheet' type='text/css' />
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
+    <script src='/assets/script.js' type='text/javascript'></script>
+    <script async='true' src='//joeframbach.disqus.com/embed.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <h1>
+        <a href='/'>Joe Frambach</a>
+      </h1>
+      <ul id='navigation'>
+        <li>
+          <a href='/about'>About</a>
+        </li>
+        <li>
+          <a href='/posts'>Posts</a>
+        </li>
+      </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+  <h2>
+    <a href='omgwtfadd'>OMGWTFADD</a>
+  </h2>
+  <p>OMGWTFADD was originally coded in C++/OpenGL by Dave Wilkinson, Lindsey Bieda, and Bradley D. Kuhlman, taking first place in the PittGeeks 2nd Annual Open Source Game Coding Competition. This is a javascript remix using the HTML5 canvas element.</p>
+
+<p>The game begins with 30 seconds of Tetris play, then the board rotates &pi; for 30 seconds of Breakout play. If the ball misses the paddle, all bricks drop one spot.</p>
+
+<p>To play, javascript must be enabled, and your browser must support the <code>canvas</code> element.</p>
+
+<p>I started this project to learn more about canvas and jQuery, and in that respect it has been a huge success. Please keep in mind that this project is not finished. There is no end-game yet, and there are some collision bugs. I don&#39;t think the pieces rotate correctly. I&#39;ll add scorekeeping as soon as I figure out how to draw text on canvas.</p>
+
+<p>Firefox users may encounter some lag due to not using WebKit :p and some issues with holding down keypresses. Chrome and Safari are recommended.</p>
+<script src='/assets/omgwtfadd.js' type='text/javascript'></script>
+<figure>
+  <canvas id='omgwtfaddcanvas' style='width:100%;margin:0 auto;'></canvas>
+  <figcaption>
+    <a id='omgwtfaddstart' onclick='omgwtfaddstart(this);' style='cursor:pointer'>Click to start</a>
+  </figcaption>
+</figure>
+  <div class='load-comments' data-disqus-identifier='omgwtfadd' data-shortname='omgwtfadd'>Load Comments</div>
+</div>
+    </div>
+    <div id='footer'></div>
+  </body>
+</html>

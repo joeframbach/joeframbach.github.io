@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Joe Frambach Epoch Win!</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+    <link href='/assets/style.css' rel='stylesheet' type='text/css' />
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
+    <script src='/assets/script.js' type='text/javascript'></script>
+    <script async='true' src='//joeframbach.disqus.com/embed.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <h1>
+        <a href='/'>Joe Frambach</a>
+      </h1>
+      <ul id='navigation'>
+        <li>
+          <a href='/about'>About</a>
+        </li>
+        <li>
+          <a href='/posts'>Posts</a>
+        </li>
+      </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+  <h2>
+    <a href='epoch-win'>Epoch Win!</a>
+  </h2>
+  <p>UNIX systems and their derivatives store the current datetime as a single number - the number of seconds since 1 Jan 1970 00:00:00, known as the Unix Epoch (pronounced &quot;epic&quot;). This guarantees that odd dates such as 1 Jan 2000 and 29 Feb 2004 do not cause problems, and makes date calculations really easy. As an added bonus, geeks around the world will celebrate 13 Feb 2009 as a milestone in UNIX history. Why?
+Take a look at the current UNIX timestamp:</p>
+<div id='unixepoch'></div>
+<p>Based on that number, and your powers of estimation, what do you think that number will be on 13 Feb 2009 23:31:30 UTC (18:31:30 EST)?</p>
+
+<p><code>1234567890</code>. Party Time.</p>
+<script type='text/javascript'>
+  //<![CDATA[
+    setInterval("document.getElementById('unixepoch').innerHTML=Math.floor((new Date()).getTime()/1000);",500);
+  //]]>
+</script>
+  <div class='load-comments' data-disqus-identifier='epoch-win' data-shortname='epoch-win'>Load Comments</div>
+</div>
+    </div>
+    <div id='footer'></div>
+  </body>
+</html>

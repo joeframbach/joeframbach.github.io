@@ -1,0 +1,75 @@
+:css
+  .page-header {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header-name {
+    font-weight: bold;
+  }
+  .header-address {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+  .section-header {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin: 1em 0;
+    font-weight: bold;
+  }
+  .content-header {
+    margin-top: 0.5em;
+  }
+  .content-header .left {
+    font-weight: bold;
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .content-subtext {
+    font-size: 0.9em;
+    clear: both;
+  }
+  ul {
+    list-style: circle inside;
+    margin: 0.5em auto 0.5em 1em;
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+  ul li.nodot {
+    list-style: none inside;
+  }
+  @media screen and (min-width: 746px) {
+    .page {
+      margin: 24px auto;
+      padding: 24px;
+      width: 684px;
+      min-height: 884px;
+      border-top: 1px solid black;
+      border-right: 3px solid black;
+      border-bottom: 3px solid black;
+      border-left: 1px solid black;
+    }
+  }
+  @media screen and (max-width: 746px) {
+    .page:nth-child(n+2) {
+      page-break-before: always;
+    }
+    .page:nth-child(n+2) .page-header {
+      display: none;
+    }
+    .right {
+      clear: left;
+      float: left;
+    }
+  }
+  @media print {
+    @page {
+      margin: 0.5cm;
+    }
+    li a {
+      display: none;
+    }
+  }

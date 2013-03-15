@@ -1,0 +1,20 @@
+%html
+  %head
+    %title=title
+    %meta{:name=>"viewport", :content=>"width=device-width, initial-scale=1, maximum-scale=1"}
+    %link{"rel"=>"stylesheet", "href"=>"/assets/style.css", "type"=>"text/css"}
+    %script{:type=>"text/javascript", :src=>"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    %script{:type=>"text/javascript", :src=>"/assets/script.js"}
+    %script{:type=>"text/javascript", :src=>"//joeframbach.disqus.com/embed.js", :async=>"true"}
+  %body
+    #header
+      %h1
+        %a{:href=>"/"} Joe Frambach
+      %ul#navigation
+        %li
+          %a(href="/about") About
+        %li
+          %a(href="/posts") Posts
+    #content
+      =yield
+    #footer

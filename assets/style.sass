@@ -1,0 +1,84 @@
+body
+  background: #dddddd
+  color: #483C32
+  font-size: 1.25em
+  overflow-y: scroll
+  @media (max-width: 700px)
+    background: #ffffff
+
+a
+  color: #483C32
+  text-decoration: none
+  :visited
+    color: #483C32
+
+#header
+  background: #ffffff
+  margin: 24px auto
+  padding: 24px
+  max-width: 684px
+  @media (min-width: 700px)
+    border-top: 1px solid black
+    border-right: 3px solid black
+    border-bottom: 3px solid black
+    border-left: 1px solid black
+
+ul#navigation li
+  display: inline
+  list-style-type: none
+  padding: 10px
+
+.post
+  background: #ffffff
+  margin: 24px auto
+  padding: 24px
+  width: 684px
+  @media (min-width: 700px)
+    border-top: 1px solid black
+    border-right: 3px solid black
+    border-bottom: 3px solid black
+    border-left: 1px solid black
+
+figure
+  width: 400px
+  outline: 1px solid #dddddd
+  background: #f0f0f0
+  display: block
+  margin: 16px auto
+  padding: 8px 0
+  text-align: center
+  & img
+    max-height: 400px
+    max-width: 368px
+    margin: 16px
+  & figcaption
+    font-size: 0.8em
+
+.code
+  max-width: 652px
+  outline: 1px solid #dddddd
+  border-top: 1px solid #ffffff
+  padding: 16px
+  background: #f0f0f0
+  overflow-x: scroll
+
+.load-comments
+  cursor: pointer
+  border-top: 1px dotted black
+  padding: 24px
+  background: #dddddd
+
+blockquote
+  word-wrap: break-word
+
+@media (max-width: 700px)
+  #header, #footer, .post, figure
+    width: 100%
+    padding: 0
+    margin: 16px 0
+    background: #ffffff
+    outline: none
+  .post img
+    margin: 0
+    max-height: 200px
+    max-width: 100%

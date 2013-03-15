@@ -1,0 +1,8 @@
+-if defined?(path) && File.exists?("posts/#{path}.haml")
+  .post
+
+    %h2
+      %a{:href=>"#{path}"}=title
+
+    =render("posts/#{path}.haml", locals)
+    .load-comments{'data-shortname'=>"#{path}",'data-disqus-identifier'=>"#{path}"} Load Comments
