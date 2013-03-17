@@ -1,0 +1,13 @@
+.post
+  %h2
+    %a{:href=>"/#{path}"}=title
+  -tags.each do |tag|
+    =render_link "/tag/#{tag}", "#{tag}"
+  =render "posts/#{path}.haml", locals
+  #disqus_thread
+  :javascript
+     var disqus_shortname = 'joeframbach';
+     var disqus_identifier = '#{path}';
+     var disqus_title = '#{title}';
+     var disqus_url = 'http://joe.framba.ch/#{path}';
+  %script{:type=>"text/javascript", :src=>"//joeframbach.disqus.com/embed.js"}

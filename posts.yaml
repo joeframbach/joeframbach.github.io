@@ -1,15 +1,23 @@
+- :title: Extending Markdown with Redcarpet
+  :date: 2013-03-16
+  :path: extending-markdown-with-redcarpet
+  :tags: [code, ruby, markdown]
+- :title: Pokemural
+  :date: 2013-03-12
+  :path: pokemural
+  :tags: [pokemon]
 - :title: QR Code on a Cylinder
   :date: 2011-09-23
   :path: qr-code-on-a-cylinder
-  :tags: [bicycling, code]
+  :tags: [bike, code]
 - :title: Frambike
   :date: 2011-09-22
   :path: frambike
-  :tags: [bicycling]
+  :tags: [bike]
 - :title: Escape to the Lake 2010
   :date: 2010-06-08
   :path: escape-to-the-lake-2010
-  :tags: [bicycling]
+  :tags: [bike]
 - :title: OMGWTFADD
   :date: 2010-05-22
   :path: omgwtfadd
@@ -25,11 +33,11 @@
 - :title: Cycling and Risk Management in Durham
   :date: 2009-11-20
   :path: cycling-and-risk-management-in-durham
-  :tags: [bicycling, travel]
+  :tags: [bike, travel]
 - :title: Escape to the Lake 2009
   :date: 2009-05-20
   :path: escape-to-the-lake-2009
-  :tags: [bicycling]
+  :tags: [bike]
 - :title: Appalachian Trail Night Hiking
   :date: 2009-05-15
   :path: appalachian-trail-night-hiking
@@ -53,7 +61,7 @@
 - :title: GAP-CandO
   :date: 2009-03-31
   :path: gap-cando
-  :tags: [bicycling]
+  :tags: [bike]
 - :title: The Day I Parsed Nothing
   :date: 2009-02-22
   :path: the-day-i-parsed-nothing
@@ -65,7 +73,7 @@
 - :title: Escape to the Lake Preliminaries
   :date: 2009-02-03
   :path: escape-to-the-lake-preliminaries
-  :tags: [bicycling]
+  :tags: [bike]
 - :title: Utahraptors
   :date: 2009-01-30
   :path: utahraptors
