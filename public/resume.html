@@ -47,13 +47,13 @@
           clear: both;
         }
         ul {
-          list-style: circle inside;
+          list-style: none inside;
           margin: 0.5em auto 0.5em 1em;
           padding-left: 1em;
           text-indent: -1em;
         }
-        ul li.nodot {
-          list-style: none inside;
+        ul li:before {
+          content: "\203A";
         }
         @media screen and (min-width: 746px) {
           .page {
@@ -106,29 +106,51 @@
 </div>
 <div class='content-subtext'>There is no silver bullet. Right now I can hit the ground running with:</div>
 <ul>
-  <li><b>PHP</b>: Transitioning 5.2 to 5.3 and 5.4. Familiar with Composer, PHPUnit, and <b>Selenium</b>.</li>
-  <li><b>MySql</b> and its ilk: Postgres and Oracle PL/SQL. And its antitheses: <b>MongoDB</b> and <b>Redis</b>.</li>
-  <li><b>Python</b> and its computation modules: numpy, scipy, QSTK for computational investing.</li>
-  <li>Some frameworks: Wordpress, Drupal, Rails, although I don't like to rely on them.</li>
-  <li><b>Node</b> and its common modules: async, socket.io, Express, Mongoose.</li>
-  <li>Other servers and proxies: nginx and HAProxy. For load balancing and checkout queueing.</li>
+  <li>
+    <b>PHP</b>: Transitioning 5.2 to 5.3 and 5.4. Familiar with Composer, PHPUnit, and <b>Selenium</b>.
+  </li>
+  <li>
+    <b>MySql</b> and its ilk: Postgres and Oracle PL/SQL. And its antitheses: <b>MongoDB</b> and <b>Redis</b>.
+  </li>
+  <li>
+    <b>Python</b> and its computation modules: numpy, scipy, QSTK for computational investing.
+  </li>
+  <li>
+    Some frameworks: Wordpress, Drupal, Rails, although I don't like to rely on them.
+  </li>
+  <li>
+    <b>Node</b> and its common modules: async, socket.io, Express, Mongoose.
+  </li>
+  <li>
+    Other servers and proxies: nginx and HAProxy. For load balancing and checkout queueing.
+  </li>
 </ul>
 <div class='content-header'>
   <div class='left'>Front-End Development</div>
 </div>
 <div class='content-subtext'>Lists are for machines. Throw any technology at me and I'll do just fine.</div>
 <ul>
-  <li>Foundations: HTML, CSS, javascript. I pay attention to standards and new toys.</li>
-  <li>Abstractions: JQuery, HAML, SASS, coffeescript. Writing low level code is so 2000s.</li>
-  <li>Applications: AJAX, Twitter Bootstrap, JQuery Templates.</li>
+  <li>
+    Foundations: HTML, CSS, javascript. I pay attention to standards and new toys.
+  </li>
+  <li>
+    Abstractions: JQuery, HAML, SASS, coffeescript. Writing low level code is so 2000s.
+  </li>
+  <li>
+    Applications: AJAX, Twitter Bootstrap, JQuery Templates.
+  </li>
 </ul>
 <div class='content-header'>
   <div class='left'>Operating Systems and Software</div>
 </div>
 <div class='content-subtext'></div>
 <ul>
-  <li>Most comfortable with a bash prompt on Debian.</li>
-  <li>Prefer vim over emacs and git over hg.</li>
+  <li>
+    Most comfortable with a bash prompt on Debian.
+  </li>
+  <li>
+    Prefer vim over emacs and git over hg.
+  </li>
 </ul>
     <div class='section-header'>EXPERIENCE</div>
 <div class='content-header'>
@@ -141,17 +163,39 @@
   Assist in hosting local tech meetups for node.js and the ShowClix social recruiting event, Engibeering.
 </div>
 <ul>
-  <li><b>Incentix</b>: Use Facebook and Twitter API to give discounts with social promotion.</li>
-  <li><b>Embed and Facebook checkout</b>: Embeds the purchase process into a website or Facebook page tab.</li>
-  <li><b>Merchandising</b>: Product selling and fulfillment platform used by C2E2, Blue October, and others.</li>
-  <li><b>Product bundles</b>: Groups tickets and products, with flexible pricing and reporting options.</li>
-  <li><b>Membership</b>: Offers members-only tickets and discounts with client's external API.</li>
-  <li><b>Self-serve membership</b>: Sellers may import membership lists into ShowClix-hosted MongoDB.</li>
-  <li><b>Questions</b>: Sellers may ask questions to customers per-sale, per-event, and per-ticket.</li>
-  <li><b>Order fulfillment</b>: Queues shippable orders, verifies tickets, and tracks shipping to customers.</li>
-  <li><b>BOCA thermal printing</b>: Prints physical tickets using a BOCA printer, with collation options.</li>
-  <li><b>Email Outbox</b>: Sellers may draft and send emails to customers using TinyMCE editor.</li>
-  <li><b>Stress testing</b>: Uses Grinder and Linode API to replicate production and slam it with 50,000 users.</li>
+  <li>
+    <b>Incentix</b>: Use Facebook and Twitter API to give discounts with social promotion.
+  </li>
+  <li>
+    <b>Embed and Facebook checkout</b>: Embeds the purchase process into a website or Facebook page tab.
+  </li>
+  <li>
+    <b>Merchandising</b>: Product selling and fulfillment platform used by C2E2, Blue October, and others.
+  </li>
+  <li>
+    <b>Product bundles</b>: Groups tickets and products, with flexible pricing and reporting options.
+  </li>
+  <li>
+    <b>Membership</b>: Offers members-only tickets and discounts with client's external API.
+  </li>
+  <li>
+    <b>Self-serve membership</b>: Sellers may import membership lists into ShowClix-hosted MongoDB.
+  </li>
+  <li>
+    <b>Questions</b>: Sellers may ask questions to customers per-sale, per-event, and per-ticket.
+  </li>
+  <li>
+    <b>Order fulfillment</b>: Queues shippable orders, verifies tickets, and tracks shipping to customers.
+  </li>
+  <li>
+    <b>BOCA thermal printing</b>: Prints physical tickets using a BOCA printer, with collation options.
+  </li>
+  <li>
+    <b>Email Outbox</b>: Sellers may draft and send emails to customers using TinyMCE editor.
+  </li>
+  <li>
+    <b>Stress testing</b>: Uses Grinder and Linode API to replicate production and slam it with 50,000 users.
+  </li>
 </ul>
 <div class='content-header'>
   <div class='left'><b>United States Steel Corporation</b>, Pittsburgh, PA</div>
@@ -163,7 +207,9 @@
     Converted mainframe COBOL/AS400 programs into VB.NET web interfaces.
     These include inventory management, truck tracking and gate security applications, and scheduling reports.
   </li>
-  <li>Supported older ASP and J2EE applications for multiple teams.</li>
+  <li>
+    Supported older ASP and J2EE applications for multiple teams.
+  </li>
 </ul>
 <!-- <h3>Developer - ERP Extensions and Workflows</h3> -->
 <!-- <ul> -->
@@ -267,11 +313,21 @@
       </div>
       <ul>
         <li>
+          Stripe Capture the Flag v2.0.
+          <div class='right'>Aug 2012</div>
+          <br />
+          - Web challenges: SQL injection, CSRF vulnerabilies, SHA1 padding
+        </li>
+        <li>
           Backpacked the Appalachian Trail from Georgia to Maine.
           <div class='right'>Summer 2008</div>
         </li>
-        <li>Ran marathons in Chicago, Pikes Peak, Virginia Beach, Philadelphia, and Pittsburgh.</li>
-        <li>Bicycled from Pittsburgh to Washington, DC, and Pittsburgh to Lake Erie.</li>
+        <li>
+          Ran marathons in Chicago, Pikes Peak, Virginia Beach, Philadelphia, and Pittsburgh.
+        </li>
+        <li>
+          Bicycled from Pittsburgh to Washington, DC, and Pittsburgh to Lake Erie.
+        </li>
         <li>
           Competed and currently judge 24-hour Game Coding Competitions.
           <div class='right'>2007-2012</div>
