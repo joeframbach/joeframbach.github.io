@@ -1,0 +1,210 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 8, ../sass/screen.scss */
+body {
+  color: #483C32;
+  font-size: 1.25em;
+  overflow-y: scroll;
+}
+
+/* line 14, ../sass/screen.scss */
+a {
+  color: #4B5D6C;
+  text-decoration: none;
+}
+/* line 17, ../sass/screen.scss */
+a :visited {
+  color: #4B5D6C;
+}
+
+/* line 22, ../sass/screen.scss */
+#header {
+  background: #ffffff;
+  margin: 24px auto;
+  padding: 24px;
+  max-width: 684px;
+}
+@media (min-width: 700px) {
+  /* line 22, ../sass/screen.scss */
+  #header {
+    border-top: 1px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+  }
+}
+
+/* line 36, ../sass/screen.scss */
+.post {
+  background: #ffffff;
+  margin: 24px auto;
+  padding: 24px;
+  width: 684px;
+}
+
+/* line 43, ../sass/screen.scss */
+figure {
+  width: 400px;
+  outline: 1px solid #dddddd;
+  background: #f0f0f0;
+  display: block;
+  margin: 16px auto;
+  padding: 8px 0;
+  text-align: center;
+}
+/* line 51, ../sass/screen.scss */
+figure img {
+  max-height: 400px;
+  max-width: 368px;
+  margin: 16px;
+}
+/* line 56, ../sass/screen.scss */
+figure figcaption {
+  font-size: 0.8em;
+}
+
+/* line 61, ../sass/screen.scss */
+.post-preview {
+  background: -webkit-gradient(linear, 0% 50%, 534 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(3.74532%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
+  background: linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
+  position: relative;
+}
+/* line 63, ../sass/screen.scss */
+.post-preview:hover {
+  background: -webkit-gradient(linear, 0% 50%, 534 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(3.74532%, rgba(0, 0, 0, 0.15)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
+  background: linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
+}
+/* line 67, ../sass/screen.scss */
+.post-preview a.post-preview-link span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+/* line 76, ../sass/screen.scss */
+.post-preview .tag {
+  position: relative;
+  z-index: 2;
+  background-color: #f8f8f8;
+  outline: #808080;
+}
+/* line 82, ../sass/screen.scss */
+.post-preview figure, .post-preview figure:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+/* line 92, ../sass/screen.scss */
+.post-preview figure:after {
+  content: "";
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* line 98, ../sass/screen.scss */
+.code {
+  max-width: 652px;
+  outline: 1px solid #dddddd;
+  border-top: 1px solid #ffffff;
+  padding: 16px;
+  background: #f0f0f0;
+  overflow-x: scroll;
+}
+
+/* line 107, ../sass/screen.scss */
+.pagination {
+  border-top: 1px dotted black;
+  margin-top: 12px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* line 114, ../sass/screen.scss */
+.github-widget {
+  margin: 16px 0;
+}
+
+/* line 118, ../sass/screen.scss */
+#disqus_thread {
+  padding: 16px;
+  border-top: 1px dotted black;
+}
+
+/* line 123, ../sass/screen.scss */
+blockquote {
+  word-wrap: break-word;
+}
+
+/* line 127, ../sass/screen.scss */
+.tag {
+  display: inline-block;
+  margin: 4px;
+  padding: 4px;
+  font-size: 0.8em;
+  outline: 1px solid #dddddd;
+  background: #f0f0f0;
+  position: relative;
+}
+/* line 135, ../sass/screen.scss */
+.tag.active {
+  background: #ffffff;
+}
+/* line 138, ../sass/screen.scss */
+.tag span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 700px) {
+  /* line 148, ../sass/screen.scss */
+  #header, #footer, .post, figure {
+    width: 100%;
+    padding: 0;
+    margin: 16px 0;
+    background: #ffffff;
+    outline: none;
+  }
+
+  /* line 155, ../sass/screen.scss */
+  .post {
+    border-top: 1px dotted black;
+  }
+
+  /* line 158, ../sass/screen.scss */
+  .post img {
+    margin: 0;
+    max-height: 200px;
+    max-width: 100%;
+  }
+
+  /* line 164, ../sass/screen.scss */
+  .post-preview .tag {
+    display: none;
+  }
+  /* line 167, ../sass/screen.scss */
+  .post-preview figure {
+    display: none;
+  }
+}

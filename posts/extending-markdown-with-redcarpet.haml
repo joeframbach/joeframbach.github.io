@@ -47,3 +47,33 @@
 
 .github-widget{'data-repo'=>"joeframbach/joe.framba.ch"}
 
+:markdown
+  #Update
+
+  Some component of Ruby 2.0.0, Haml, or Redcarpet decided to not work anymore. The solution was a slight modification, below:
+
+  ``` ruby
+  require 'haml'
+  require 'redcarpet'
+
+  class CustomRedcarpet < Redcarpet::Render::HTML
+    def image(link, title, alt_text)
+      "<figure><a href='\#{link}'><img src='\#{link}' alt='\#{alt_text}' /></a><figcaption>\#{title}</figcaption></figure>"
+    end
+  end
+
+  module Haml::Filters
+
+    remove_filter("Markdown")
+
+    module Markdown
+      include Haml::Filters::Base
+
+      @renderer = Redcarpet::Markdown.new(CustomRedcarpet.new())
+
+      def render(text)
+        @renderer.render(text)
+      end
+    end
+  end
+

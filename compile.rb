@@ -15,20 +15,25 @@ class CustomRedcarpet < Redcarpet::Render::HTML
   end
 end
 
-module Haml::Filters::Markdown
-  include Haml::Filters::Base
+module Haml::Filters
 
-  @renderer = Redcarpet::Markdown.new(CustomRedcarpet.new(), {
-    :fenced_code_blocks => true,
-    :no_intra_emphasis => true,
-    :autolink => true,
-    :strikethrough => true,
-    :lax_html_blocks => true,
-    :superscript => true
-  })
+  remove_filter("Markdown")
 
-  def render(text)
-    @renderer.render(text)
+  module Markdown
+    include Haml::Filters::Base
+
+    @renderer = Redcarpet::Markdown.new(CustomRedcarpet.new(), {
+      :fenced_code_blocks => true,
+      :no_intra_emphasis => true,
+      :autolink => true,
+      :strikethrough => true,
+      :lax_html_blocks => true,
+      :superscript => true
+    })
+
+    def render(text)
+      @renderer.render(text)
+    end
   end
 end
 
@@ -54,7 +59,7 @@ end
 $posts = YAML.load_file('posts.yaml')
 $posts.map! do |post|
   src = File.read("posts/#{post[:path]}.haml")
-  post[:images] = src.scan(/^\s*!\[[^\]]+\]\(([^ \)]+)[^\)]*\)$/).collect(&:first)
+  post[:images] = "/thumbs/s/#{post[:path]}.png"
   post
 end
 

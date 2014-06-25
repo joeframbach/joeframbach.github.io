@@ -1,0 +1,140 @@
+body {
+  background: #dddddd;
+  color: #483c32;
+  font-size: 1.25em;
+  overflow-y: scroll; }
+  @media (max-width: 700px) {
+    body {
+      background: white; } }
+
+a {
+  color: #4b5d6c;
+  text-decoration: none;
+  visited-color: #4b5d6c; }
+
+#header {
+  background: white;
+  margin: 24px auto;
+  padding: 24px;
+  max-width: 684px; }
+  @media (min-width: 700px) {
+    #header {
+      border-top: 1px solid black;
+      border-right: 3px solid black;
+      border-bottom: 3px solid black;
+      border-left: 1px solid black; } }
+
+.post {
+  background: white;
+  margin: 24px auto;
+  padding: 24px;
+  width: 684px; }
+  @media (min-width: 700px) {
+    .post {
+      border-top: 1px solid black;
+      border-right: 3px solid black;
+      border-bottom: 3px solid black;
+      border-left: 1px solid black; } }
+
+figure {
+  width: 400px;
+  outline: 1px solid #dddddd;
+  background: #f0f0f0;
+  display: block;
+  margin: 16px auto;
+  padding: 8px 0;
+  text-align: center; }
+  figure img {
+    max-height: 400px;
+    max-width: 368px;
+    margin: 16px; }
+  figure figcaption {
+    font-size: 0.8em; }
+
+.post-preview {
+  position: relative;
+  min-height: 182px; }
+  .post-preview a.post-preview-link span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"); }
+  .post-preview .tag {
+    position: relative;
+    z-index: 2; }
+  .post-preview figure {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    line-height: 150px; }
+    .post-preview figure img {
+      max-width: 118px;
+      max-height: 118px;
+      vertical-align: middle; }
+
+.code {
+  max-width: 652px;
+  outline: 1px solid #dddddd;
+  border-top: 1px solid white;
+  padding: 16px;
+  background: #f0f0f0;
+  overflow-x: scroll; }
+
+.pagination {
+  border-top: 1px dotted black;
+  margin-top: 12px;
+  padding-top: 12px;
+  text-align: center; }
+
+.github-widget {
+  margin: 16px 0; }
+
+#disqus_thread {
+  padding: 16px;
+  border-top: 1px dotted black; }
+
+blockquote {
+  word-wrap: break-word; }
+
+.tag {
+  display: inline-block;
+  margin: 4px;
+  padding: 4px;
+  font-size: 0.8em;
+  outline: 1px solid #dddddd;
+  background: #f0f0f0;
+  position: relative; }
+  .tag.active {
+    background: white; }
+  .tag span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+
+@media (max-width: 700px) {
+  #header, #footer, .post, figure {
+    width: 100%;
+    padding: 0;
+    margin: 16px 0;
+    background: white;
+    outline: none; }
+
+  .post {
+    border-top: 1px dotted black; }
+
+  .post img {
+    margin: 0;
+    max-height: 200px;
+    max-width: 100%; }
+
+  .post-preview .tag {
+    display: none; }
+  .post-preview figure {
+    display: none; } }

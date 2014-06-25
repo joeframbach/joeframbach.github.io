@@ -1,12 +1,13 @@
+!!! 5
 -def render(partial, locals={})
   -Haml::Engine.new(File.read("_#{partial}.html.haml")).render(Object.new, locals)
 -def render_block(partial, &block)
   -render(partial, {:block=>capture_haml(&block)})
-!!! 5
 %html
   %head
     %meta{:name=>"viewport", :content=>"width=device-width, initial-scale=1, maximum-scale=1"}
     %meta(charset="utf-8")
+    %link{:rel=>"stylesheet", :href=>"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"}
     %title Joseph Frambach - Resume
     =render :style
   %body

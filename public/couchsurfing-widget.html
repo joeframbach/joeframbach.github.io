@@ -2,139 +2,135 @@
 <html>
   <head>
     <title>Joe Frambach - Couchsurfing JQuery Widget</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
-    <link href='/assets/style.css' rel='stylesheet' type='text/css' />
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='/assets/style.css' rel='stylesheet' type='text/css'>
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
     <script src='/assets/script.js' type='text/javascript'></script>
     <script src='/assets/jquery.githubRepoWidget.js' type='text/javascript'></script>
   </head>
   <body>
     <div id='header'>
-  <h1>
-    <a href='/'>Joe Frambach</a>
-  </h1>
-  <div class='tag'>
-    <a class='tagname' href='/tag/bike'>
-      bike x 7
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-  <a class='tagname' href='/tag/code'>
-    code x 7
-    <span></span>
-  </a>
-</div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/travel'>
-      travel x 3
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/couchsurfing'>
-      couchsurfing x 3
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/appalachian-trail'>
-      appalachian-trail x 3
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/pokemon'>
-      pokemon x 2
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/javascript'>
-      javascript x 2
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/marathon'>
-      marathon x 2
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/canvas'>
-      canvas
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/ruby'>
-      ruby
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/markdown'>
-      markdown
-      <span></span>
-    </a>
-  </div>
-</div>
+      <h1>
+        <a href='/'>Joe Frambach</a>
+      </h1>
+      <div class='tag'>
+        <a class='tagname' href='/tag/bike'>
+          bike x 7
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/code'>
+          code x 6
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/travel'>
+          travel x 3
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/couchsurfing'>
+          couchsurfing x 3
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/appalachian-trail'>
+          appalachian-trail x 3
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/pokemon'>
+          pokemon x 2
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/javascript'>
+          javascript x 2
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/marathon'>
+          marathon x 2
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/canvas'>
+          canvas
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/ruby'>
+          ruby
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/markdown'>
+          markdown
+          <span></span>
+        </a>
+      </div>
+    </div>
     <div id='content'>
       <div class='post'>
-  <h2>
-    <a href='/couchsurfing-widget'>Couchsurfing JQuery Widget</a>
-  </h2>
-  <div class='tag'>
-    <a class='tagname' href='/tag/couchsurfing'>
-      couchsurfing
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-    <a class='tagname' href='/tag/javascript'>
-      javascript
-      <span></span>
-    </a>
-  </div>
-  <div class='tag'>
-  <a class='tagname' href='/tag/code'>
-    code
-    <span></span>
-  </a>
-</div>
-  <p>I made a webpage widget for Couchsurfing. It looks like this:</p>
-  <script src='/assets/jquery-couchsurfing-widget.js' type='text/javascript'></script>
-  <div class='couchsurfing-widget' data-username='joeframbach'></div>
-  <p>Unfortunately, Couchsurfing does not have a public API, and the server does not allow CORS, so I had to proxy the request through YQL and pick the resulting HTML apart with JQuery.</p>
-  
-  <p>The github repo for the project is available here:</p>
-  <div class='github-widget' data-repo='joeframbach/jquery-couchsurfing-widget'></div>
-  <div id='disqus_thread'></div>
-  <script type='text/javascript'>
-    //<![CDATA[
-       var disqus_shortname = 'joeframbach';
-       var disqus_identifier = 'couchsurfing-widget';
-       var disqus_title = 'Couchsurfing JQuery Widget';
-       var disqus_url = 'http://joe.framba.ch/couchsurfing-widget';
-    //]]>
-  </script>
-  <script src='//joeframbach.disqus.com/embed.js' type='text/javascript'></script>
-</div>
+        <h2>
+          <a href='/couchsurfing-widget'>Couchsurfing JQuery Widget</a>
+        </h2>
+        <div class='tag'>
+          <a class='tagname' href='/tag/couchsurfing'>
+            couchsurfing
+            <span></span>
+          </a>
+        </div>
+        <div class='tag'>
+          <a class='tagname' href='/tag/javascript'>
+            javascript
+            <span></span>
+          </a>
+        </div>
+        <div class='tag'>
+          <a class='tagname' href='/tag/code'>
+            code
+            <span></span>
+          </a>
+        </div>
+        <p>I made a webpage widget for Couchsurfing. It looks like this:</p>
+        <script src='/assets/jquery-couchsurfing-widget.js' type='text/javascript'></script>
+        <div class='couchsurfing-widget' data-username='joeframbach'></div>
+        <p>Unfortunately, Couchsurfing does not have a public API, and the server does not allow CORS, so I had to proxy the request through YQL and pick the resulting HTML apart with JQuery.</p>
+        
+        <p>The github repo for the project is available here:</p>
+        <div class='github-widget' data-repo='joeframbach/jquery-couchsurfing-widget'></div>
+        <div id='disqus_thread'></div>
+        <script>
+           var disqus_shortname = 'joeframbach';
+           var disqus_identifier = 'couchsurfing-widget';
+           var disqus_title = 'Couchsurfing JQuery Widget';
+           var disqus_url = 'http://joe.framba.ch/couchsurfing-widget';
+        </script>
+        <script src='//joeframbach.disqus.com/embed.js' type='text/javascript'></script>
+      </div>
     </div>
     <div id='footer'>
-      <script type='text/javascript'>
-        //<![CDATA[
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-39466959-1']);
-          _gaq.push(['_trackPageview']);
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        //]]>
+      <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39466959-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
       </script>
     </div>
   </body>

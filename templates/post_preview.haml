@@ -6,6 +6,4 @@
     %a #{title}
   -tags.each do |tag|
     =render_link "/tag/#{tag}", "#{tag}", false
-  -if images.size && !images[0].nil?
-    %figure
-      %img{:src=>"#{images[0]}",:alt=>"Preview image"}
+  %figure{:style => "background-image: url(/thumbs/s/#{path}.png)"}
