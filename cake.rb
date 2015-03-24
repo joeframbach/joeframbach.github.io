@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'chunky_png'
 require 'optparse'
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Joe Frambach - QR Code on a Cylinder</title>
+    <title>Framblog - QR Code on a Cylinder</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link href='/assets/style.css' rel='stylesheet' type='text/css'>
@@ -12,7 +12,7 @@
   <body>
     <div id='header'>
       <h1>
-        <a href='/'>Joe Frambach</a>
+        <a href='/'>Framblog</a>
       </h1>
       <div class='tag'>
         <a class='tagname' href='/tag/bike'>
@@ -23,6 +23,12 @@
       <div class='tag'>
         <a class='tagname' href='/tag/code'>
           code x 6
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/appalachian-trail'>
+          appalachian-trail x 4
           <span></span>
         </a>
       </div>
@@ -39,14 +45,20 @@
         </a>
       </div>
       <div class='tag'>
-        <a class='tagname' href='/tag/appalachian-trail'>
-          appalachian-trail x 3
+        <a class='tagname' href='/tag/pokemon'>
+          pokemon x 2
           <span></span>
         </a>
       </div>
       <div class='tag'>
-        <a class='tagname' href='/tag/pokemon'>
-          pokemon x 2
+        <a class='tagname' href='/tag/workplace'>
+          workplace x 2
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/first-aid'>
+          first-aid x 2
           <span></span>
         </a>
       </div>
@@ -86,6 +98,41 @@
         <h2>
           <a href='/qr-code-on-a-cylinder'>QR Code on a Cylinder</a>
         </h2>
+        <p>On Frambike&#39;s downtube, right next to the bottom bracket, I have a scannable
+        QR code containing my contact info, in case it&#39;s lost or I need to prove it&#39;s
+        mine. However, my phone can&#39;t make sense of a square QR code mapped onto the
+        cylindrical tube. So I had to do some image processing.</p>
+        
+        <p>This is a standard square QR code containing contact information.
+        When wrapped around a tube, it becomes distorted and cannot scan.</p>
+        
+        <p><figure>
+              <a href='/images/qr-code-on-a-cylinder-square.png'><img src='/images/qr-code-on-a-cylinder-square.png' alt='Square QR Code'></a>
+              <figcaption>Square QR Code</figcaption>
+            </figure>
+            </p>
+        
+        <p>icyl.sh</p>
+        <div class="CodeRay">
+          <div class="code"><pre><span style="color:#088;font-weight:bold">#!/bin/bash</span>&#x000A;<span style="color:#33B">infile</span>=<span style="color:#069">$1</span>&#x000A;<span style="color:#33B">rr</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert <span style="color:#33B">$infile</span> -ping -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:w*57/90]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">hh</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert <span style="color:#33B">$infile</span> -ping -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%h</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">w2</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert <span style="color:#33B">$infile</span> -ping -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:w/2]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">ww</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert xc<span style="color:#080;font-weight:bold">:</span> -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:2*</span><span style="color:#33B">$rr</span><span style="color:#D20">*tan(0.5*90/57</span><span style="color:#D20">)</span><span style="color:#D20">]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">ww2</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert xc<span style="color:#080;font-weight:bold">:</span> -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:</span><span style="color:#33B">$ww</span><span style="color:#D20">/2]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">max</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert xc<span style="color:#080;font-weight:bold">:</span> -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:</span><span style="color:#33B">$rr</span><span style="color:#D20">*atan(</span><span style="color:#33B">$ww2</span><span style="color:#D20">/</span><span style="color:#33B">$rr</span><span style="color:#D20">)</span><span style="color:#D20">+</span><span style="color:#33B">$w2</span><span style="color:#D20">]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;convert -size <span style="color:#33B">${ww}</span>x1 xc<span style="color:#080;font-weight:bold">:</span> -monitor \&#x000A;-fx <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">xx=(i-</span><span style="color:#33B">$ww2</span><span style="color:#D20">)</span><span style="color:#D20">; (</span><span style="color:#33B">$rr</span><span style="color:#D20">*atan(xx/</span><span style="color:#33B">$rr</span><span style="color:#D20">)</span><span style="color:#D20">+</span><span style="color:#33B">$w2</span><span style="color:#D20">)</span><span style="color:#D20">/</span><span style="color:#33B">$max</span><span style="color:#710">&quot;</span></span> +monitor \&#x000A;-scale <span style="color:#33B">${ww}</span>x<span style="color:#33B">${hh}</span><span style="color:#080;font-weight:bold">!</span> tmp.png&#x000A;<span style="color:#080;font-weight:bold">time</span> convert tmp.png <span style="color:#33B">$infile</span> -monitor \&#x000A;-fx <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">v.p{</span><span style="color:#33B">$max</span><span style="color:#D20">*u,j}</span><span style="color:#710">&quot;</span></span> +monitor <span style="color:#069">$1</span>_corrected.jpg</pre></div>
+        </div>
+        
+        <p>In the shell:</p>
+        <div class="CodeRay">
+          <div class="code"><pre>~ $ ./icyl.sh Downloads/jenny.png&#x000A;Mogrify/Image/Downloads<span style="color:#080;font-weight:bold">[</span>jenny.png<span style="color:#080;font-weight:bold">]</span><span style="color:#080;font-weight:bold">:</span> <span style="color:#00D">1</span> of <span style="color:#00D">2</span>, <span style="color:#00D">100</span>% complete&#x000A;fx image<span style="color:#080;font-weight:bold">[</span>tmp.png<span style="color:#080;font-weight:bold">]</span><span style="color:#080;font-weight:bold">:</span> <span style="color:#00D">199</span> of <span style="color:#00D">200</span>, <span style="color:#00D">100</span>% complete&#x000A;&#x000A;real    <span style="color:#00D">0</span>m0.<span style="color:#00D">269</span>s&#x000A;user    <span style="color:#00D">0</span>m0.<span style="color:#00D">333</span>s&#x000A;sys     <span style="color:#00D">0</span>m0.<span style="color:#00D">017</span>s</pre></div>
+        </div>
+        
+        <p><figure>
+              <a href='/images/qr-code-on-a-cylinder-corrected.jpg'><img src='/images/qr-code-on-a-cylinder-corrected.jpg' alt='Corrected QR Code'></a>
+              <figcaption>QR Code projected onto a cylinder. When wrapped around a tube, it appears square.</figcaption>
+            </figure>
+            </p>
+        
+        <p><figure>
+              <a href='/images/qr-code-on-a-cylinder-downtube.jpg'><img src='/images/qr-code-on-a-cylinder-downtube.jpg' alt='Downtube with QR Code'></a>
+              <figcaption>Here's what it looks like before glue and clearcoat.</figcaption>
+            </figure>
+            </p>
         <div class='tag'>
           <a class='tagname' href='/tag/bike'>
             bike
@@ -98,29 +145,6 @@
             <span></span>
           </a>
         </div>
-        <p>On Frambike&#39;s downtube, right next to the bottom bracket, I have a scannable
-        QR code containing my contact info, in case it&#39;s lost or I need to prove it&#39;s
-        mine. However, my phone can&#39;t make sense of a square QR code mapped onto the
-        cylindrical tube. So I had to do some image processing.</p>
-        
-        <p>This is a standard square QR code containing contact information.
-        When wrapped around a tube, it becomes distorted and cannot scan.</p>
-        
-        <p><figure><a href='/images/qr-code-on-a-cylinder-square.png'><img src='/images/qr-code-on-a-cylinder-square.png' alt='Square QR Code' /></a><figcaption>Square QR Code</figcaption></figure></p>
-        
-        <p>icyl.sh</p>
-        <div class="CodeRay">
-          <div class="code"><pre><span style="color:#088;font-weight:bold">#!/bin/bash</span>&#x000A;<span style="color:#33B">infile</span>=<span style="color:#069">$1</span>&#x000A;<span style="color:#33B">rr</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert <span style="color:#33B">$infile</span> -ping -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:w*57/90]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">hh</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert <span style="color:#33B">$infile</span> -ping -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%h</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">w2</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert <span style="color:#33B">$infile</span> -ping -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:w/2]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">ww</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert xc<span style="color:#080;font-weight:bold">:</span> -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:2*</span><span style="color:#33B">$rr</span><span style="color:#D20">*tan(0.5*90/57</span><span style="color:#D20">)</span><span style="color:#D20">]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">ww2</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert xc<span style="color:#080;font-weight:bold">:</span> -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:</span><span style="color:#33B">$ww</span><span style="color:#D20">/2]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;<span style="color:#33B">max</span>=<span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span>convert xc<span style="color:#080;font-weight:bold">:</span> -format <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%[fx:</span><span style="color:#33B">$rr</span><span style="color:#D20">*atan(</span><span style="color:#33B">$ww2</span><span style="color:#D20">/</span><span style="color:#33B">$rr</span><span style="color:#D20">)</span><span style="color:#D20">+</span><span style="color:#33B">$w2</span><span style="color:#D20">]</span><span style="color:#710">&quot;</span></span> info<span style="color:#080;font-weight:bold">:</span><span style="color:#161">`</span></span>&#x000A;convert -size <span style="color:#33B">${ww}</span>x1 xc<span style="color:#080;font-weight:bold">:</span> -monitor \&#x000A;-fx <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">xx=(i-</span><span style="color:#33B">$ww2</span><span style="color:#D20">)</span><span style="color:#D20">; (</span><span style="color:#33B">$rr</span><span style="color:#D20">*atan(xx/</span><span style="color:#33B">$rr</span><span style="color:#D20">)</span><span style="color:#D20">+</span><span style="color:#33B">$w2</span><span style="color:#D20">)</span><span style="color:#D20">/</span><span style="color:#33B">$max</span><span style="color:#710">&quot;</span></span> +monitor \&#x000A;-scale <span style="color:#33B">${ww}</span>x<span style="color:#33B">${hh}</span><span style="color:#080;font-weight:bold">!</span> tmp.png&#x000A;<span style="color:#080;font-weight:bold">time</span> convert tmp.png <span style="color:#33B">$infile</span> -monitor \&#x000A;-fx <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">v.p{</span><span style="color:#33B">$max</span><span style="color:#D20">*u,j}</span><span style="color:#710">&quot;</span></span> +monitor <span style="color:#069">$1</span>_corrected.jpg</pre></div>
-        </div>
-        
-        <p>In the shell:</p>
-        <div class="CodeRay">
-          <div class="code"><pre>~ $ ./icyl.sh Downloads/jenny.png&#x000A;Mogrify/Image/Downloads<span style="color:#080;font-weight:bold">[</span>jenny.png<span style="color:#080;font-weight:bold">]</span><span style="color:#080;font-weight:bold">:</span> <span style="color:#00D">1</span> of <span style="color:#00D">2</span>, <span style="color:#00D">100</span>% complete&#x000A;fx image<span style="color:#080;font-weight:bold">[</span>tmp.png<span style="color:#080;font-weight:bold">]</span><span style="color:#080;font-weight:bold">:</span> <span style="color:#00D">199</span> of <span style="color:#00D">200</span>, <span style="color:#00D">100</span>% complete&#x000A;&#x000A;real    <span style="color:#00D">0</span>m0.<span style="color:#00D">269</span>s&#x000A;user    <span style="color:#00D">0</span>m0.<span style="color:#00D">333</span>s&#x000A;sys     <span style="color:#00D">0</span>m0.<span style="color:#00D">017</span>s</pre></div>
-        </div>
-        
-        <p><figure><a href='/images/qr-code-on-a-cylinder-corrected.jpg'><img src='/images/qr-code-on-a-cylinder-corrected.jpg' alt='Corrected QR Code' /></a><figcaption>QR Code projected onto a cylinder. When wrapped around a tube, it appears square.</figcaption></figure></p>
-        
-        <p><figure><a href='/images/qr-code-on-a-cylinder-downtube.jpg'><img src='/images/qr-code-on-a-cylinder-downtube.jpg' alt='Downtube with QR Code' /></a><figcaption>Here's what it looks like before glue and clearcoat.</figcaption></figure></p>
         <div id='disqus_thread'></div>
         <script>
            var disqus_shortname = 'joeframbach';

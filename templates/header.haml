@@ -1,10 +1,5 @@
 #header
   %h1
-    %a{:href=>"/"} Joe Frambach
+    %a{:href=>"/"} Framblog
   -$sorted_tags.each do |tag, posts|
     =render_link "/tag/#{tag}", tag, true, (defined?(selected_tag) && tag==selected_tag)
-  -if defined?(page) && pages > 1
-    .pagination
-      =render_link "#{path}", "1", false, (page==1)
-      -for i in 2..pages
-        =render_link "#{path}page/#{i}", "#{i}", false, (page==i)

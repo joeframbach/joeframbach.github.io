@@ -5,10 +5,21 @@
 
 @import "compass/css3";
 
+$desktop: 628px;
+$smallpadding: 4px;
+$padding: 24px;
+$margin: 24px;
+$red: #BC1B39;
+$background: #fffff8;
+$graybackground: grayscale($background);
+$darkborder: darken($graybackground, 10%);
+
 body {
   color: #483C32;
-  font-size: 1.25em;
+  background-color: $background;
+  font-family: Goudy Old Style, Times New Roman, serif;
   overflow-y: scroll;
+  line-height: 1.5em;
 }
 
 a {
@@ -20,30 +31,25 @@ a {
 }
 
 #header {
-  background: #ffffff;
   margin: 24px auto;
-  padding: 24px;
-  max-width: 684px;
+  padding: $padding;
+  max-width: $desktop;
+  text-align: center;
+}
 
-  @media (min-width: 700px) {
-    border-top: 1px solid black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-    border-left: 1px solid black;
-  }
+#content {
+  max-width: $desktop;
+  margin: 0 auto;
 }
 
 .post {
-  background: #ffffff;
-  margin: 24px auto;
-  padding: 24px;
-  width: 684px;
+  padding: $padding;
+  margin: $margin;
 }
 
 figure {
   width: 400px;
-  outline: 1px solid #dddddd;
-  background: #f0f0f0;
+  outline: 1px solid $darkborder;
   display: block;
   margin: 16px auto;
   padding: 8px 0;
@@ -58,10 +64,50 @@ figure {
   }
 }
 
+@include keyframes(postPreviewClockwise) {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@include keyframes(postPreviewCounterclockwise) {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}
+}
+
 .post-preview {
-  @include background(linear-gradient(left, rgba(0,0,0,0) 0px, rgba(0,0,0,0.1) 20px, rgba(0,0,0,0) 534px));
-  &:hover {
-    @include background(linear-gradient(left, rgba(0,0,0,0) 0px, rgba(0,0,0,0.15) 20px, rgba(0,0,0,0) 534px));
+  min-width: 200px;
+  min-height: 102px;
+  background: $darkborder;
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $background;
+    display: none;
+  }
+  &:hover:before, &:active:before {
+    display: block;
+    @include animation(postPreviewCounterclockwise 10s linear infinite forwards);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-top: 1px solid $red;
+    border-bottom: 1px solid complement($red);
+    display: none;
+  }
+  &:hover:after, &:active:after {
+    display: block;
+    @include animation(postPreviewClockwise 1s linear infinite forwards);
   }
   position: relative;
   & a.post-preview-link span {
@@ -73,11 +119,13 @@ figure {
     z-index: 1;
     background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
   }
+  &:hover h2 a {
+    color: $red;
+    text-shadow: none;
+  }
   & .tag {
     position: relative;
     z-index: 2;
-    background-color: #f8f8f8;
-    outline: #808080;
   }
   & figure, & figure:after {
     position: absolute;
@@ -87,27 +135,29 @@ figure {
     height: 150px;
     padding: 0;
     margin: 0;
-    outline: 0;
+    outline: none;
   }
   & figure:after {
     content: "";
-    @include background(linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%));
+    @include background(
+      linear-gradient(left, rgba(255,255,255,1) 0%,
+                            rgba(255,255,255,0) 100%)
+    );
   }
 }
 
 .code {
-  max-width: 652px;
-  outline: 1px solid #dddddd;
-  border-top: 1px solid #ffffff;
-  padding: 16px;
-  background: #f0f0f0;
+  outline: 1px solid $darkborder;
+  border-top: 1px solid $darkborder;
+  padding: $padding;
+  background: $graybackground;
   overflow-x: scroll;
 }
 
 .pagination {
-  border-top: 1px dotted black;
+  border-top: 1px dotted $darkborder;
   margin-top: 12px;
-  padding-top: 12px;
+  padding-top: $padding/2;
   text-align: center;
 }
 
@@ -116,8 +166,8 @@ figure {
 }
 
 #disqus_thread {
-  padding: 16px;
-  border-top: 1px dotted black;
+  padding: $padding;
+  border-top: 1px dotted $darkborder;
 }
 
 blockquote {
@@ -127,13 +177,21 @@ blockquote {
 .tag {
   display: inline-block;
   margin: 4px;
-  padding: 4px;
+  padding: $smallpadding;
+  min-width: $padding;
   font-size: 0.8em;
-  outline: 1px solid #dddddd;
-  background: #f0f0f0;
+  border: 1px solid $darkborder;
+  background: $graybackground;
   position: relative;
   &.active {
-    background: #ffffff;
+    background: inherit;
+  }
+  &:hover {
+    border-radius: $smallpadding;
+    background: $background;
+    border-color: transparent;
+    border-left: 1px solid $red;
+    border-right: 1px solid $red;
   }
   & span {
     position: absolute;
@@ -144,16 +202,22 @@ blockquote {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $desktop + 2*$padding) {
+  body {
+    margin: 0;
+  }
   #header, #footer, .post, figure {
-    width: 100%;
-    padding: 0;
-    margin: 16px 0;
-    background: #ffffff;
+    width: initial;
+    margin: 0;
     outline: none;
   }
   .post {
-    border-top: 1px dotted black;
+    padding: 8px;
+    margin: 8px 0px;
+    border-top: 1px dotted $darkborder;
+  }
+  #disqus_thread {
+    padding: 8px;
   }
   .post img {
     margin: 0;
@@ -161,6 +225,7 @@ blockquote {
     max-width: 100%;
   }
   .post-preview {
+    padding: 4px;
     .tag {
       display: none;
     }

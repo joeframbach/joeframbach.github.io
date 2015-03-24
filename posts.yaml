@@ -1,3 +1,11 @@
+- :title: Criteria for Code Criticism
+  :date: 2015-03-06
+  :path: criteria-for-code-criticism
+  :tags: [workplace, code]
+- :title: Interviewing
+  :date: 2015-01-11
+  :path: interviewing
+  :tags: [workplace]
 - :title: Couchsurfing JQuery Widget
   :date: 2013-03-21
   :path: couchsurfing-widget
@@ -37,39 +45,23 @@
 - :title: Cycling and Risk Management in Durham
   :date: 2009-11-20
   :path: cycling-and-risk-management-in-durham
-  :tags: [bike, travel, couchsurfing]
+  :tags: [bike, travel, couchsurfing, first-aid]
 - :title: Escape to the Lake 2009
   :date: 2009-05-20
   :path: escape-to-the-lake-2009
   :tags: [bike]
-- :title: Appalachian Trail Night Hiking
-  :date: 2009-05-15
-  :path: appalachian-trail-night-hiking
-  :tags: [appalachian-trail]
-- :title: Appalachian Trail GA-NC
-  :date: 2009-05-11
-  :path: appalachian-trail-ga-nc
-  :tags: [appalachian-trail]
 - :title: Wilderness First Aid
   :date: 2009-05-10
   :path: wilderness-first-aid
-  :tags: []
+  :tags: [first-aid]
 - :title: "Life Goal: Run a Marathon"
   :date: 2009-05-05
   :path: life-goal-run-a-marathon
   :tags: [marathon]
-- :title: Appalachian Trail Day One
-  :date: 2009-05-01
-  :path: appalachian-trail-day-one
-  :tags: [appalachian-trail]
 - :title: GAP-CandO
   :date: 2009-03-31
   :path: gap-cando
   :tags: [bike]
-- :title: The Day I Parsed Nothing
-  :date: 2009-02-22
-  :path: the-day-i-parsed-nothing
-  :tags: [code]
 - :title: Escape to the Lake Preliminaries
   :date: 2009-02-03
   :path: escape-to-the-lake-preliminaries
@@ -78,3 +70,19 @@
   :date: 2009-01-30
   :path: utahraptors
   :tags: [code]
+- :title: Standing Bear Farm
+  :date: 2008-05-16
+  :path: standing-bear-farm
+  :tags: [appalachian-trail]
+- :title: Night Hiking
+  :date: 2008-05-15
+  :path: night-hiking
+  :tags: [appalachian-trail]
+- :title: GA-NC
+  :date: 2008-05-11
+  :path: ga-nc
+  :tags: [appalachian-trail]
+- :title: Mile Zero
+  :date: 2008-05-01
+  :path: mile-zero
+  :tags: [appalachian-trail]

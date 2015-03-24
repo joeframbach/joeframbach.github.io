@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Joe Frambach - Extending Markdown with Redcarpet</title>
+    <title>Framblog - Extending Markdown with Redcarpet</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link href='/assets/style.css' rel='stylesheet' type='text/css'>
@@ -12,7 +12,7 @@
   <body>
     <div id='header'>
       <h1>
-        <a href='/'>Joe Frambach</a>
+        <a href='/'>Framblog</a>
       </h1>
       <div class='tag'>
         <a class='tagname' href='/tag/bike'>
@@ -23,6 +23,12 @@
       <div class='tag'>
         <a class='tagname' href='/tag/code'>
           code x 6
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/appalachian-trail'>
+          appalachian-trail x 4
           <span></span>
         </a>
       </div>
@@ -39,14 +45,20 @@
         </a>
       </div>
       <div class='tag'>
-        <a class='tagname' href='/tag/appalachian-trail'>
-          appalachian-trail x 3
+        <a class='tagname' href='/tag/pokemon'>
+          pokemon x 2
           <span></span>
         </a>
       </div>
       <div class='tag'>
-        <a class='tagname' href='/tag/pokemon'>
-          pokemon x 2
+        <a class='tagname' href='/tag/workplace'>
+          workplace x 2
+          <span></span>
+        </a>
+      </div>
+      <div class='tag'>
+        <a class='tagname' href='/tag/first-aid'>
+          first-aid x 2
           <span></span>
         </a>
       </div>
@@ -86,24 +98,6 @@
         <h2>
           <a href='/extending-markdown-with-redcarpet'>Extending Markdown with Redcarpet</a>
         </h2>
-        <div class='tag'>
-          <a class='tagname' href='/tag/code'>
-            code
-            <span></span>
-          </a>
-        </div>
-        <div class='tag'>
-          <a class='tagname' href='/tag/ruby'>
-            ruby
-            <span></span>
-          </a>
-        </div>
-        <div class='tag'>
-          <a class='tagname' href='/tag/markdown'>
-            markdown
-            <span></span>
-          </a>
-        </div>
         <p>Markdown uses this syntax for placing images:</p>
         <div class="CodeRay">
           <div class="code"><pre>![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</pre></div>
@@ -131,6 +125,24 @@
         <p>Some component of Ruby 2.0.0, Haml, or Redcarpet decided to not work anymore. The solution was a slight modification, below:</p>
         <div class="CodeRay">
           <div class="code"><pre>require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">haml</span><span style="color:#710">'</span></span>&#x000A;require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">redcarpet</span><span style="color:#710">'</span></span>&#x000A;&#x000A;<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">CustomRedcarpet</span> &lt; <span style="color:#036;font-weight:bold">Redcarpet</span>::<span style="color:#036;font-weight:bold">Render</span>::<span style="color:#036;font-weight:bold">HTML</span>&#x000A;  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">image</span>(link, title, alt_text)&#x000A;    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;figure&gt;&lt;a href='</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>link<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">'&gt;&lt;img src='</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>link<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">' alt='</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>alt_text<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">' /&gt;&lt;/a&gt;&lt;figcaption&gt;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>title<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">&lt;/figcaption&gt;&lt;/figure&gt;</span><span style="color:#710">&quot;</span></span>&#x000A;  <span style="color:#080;font-weight:bold">end</span>&#x000A;<span style="color:#080;font-weight:bold">end</span>&#x000A;&#x000A;<span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Haml::Filters</span>&#x000A;&#x000A;  remove_filter(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Markdown</span><span style="color:#710">&quot;</span></span>)&#x000A;&#x000A;  <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Markdown</span>&#x000A;    include <span style="color:#036;font-weight:bold">Haml</span>::<span style="color:#036;font-weight:bold">Filters</span>::<span style="color:#036;font-weight:bold">Base</span>&#x000A;&#x000A;    <span style="color:#33B">@renderer</span> = <span style="color:#036;font-weight:bold">Redcarpet</span>::<span style="color:#036;font-weight:bold">Markdown</span>.new(<span style="color:#036;font-weight:bold">CustomRedcarpet</span>.new())&#x000A;&#x000A;    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">render</span>(text)&#x000A;      <span style="color:#33B">@renderer</span>.render(text)&#x000A;    <span style="color:#080;font-weight:bold">end</span>&#x000A;  <span style="color:#080;font-weight:bold">end</span>&#x000A;<span style="color:#080;font-weight:bold">end</span></pre></div>
+        </div>
+        <div class='tag'>
+          <a class='tagname' href='/tag/code'>
+            code
+            <span></span>
+          </a>
+        </div>
+        <div class='tag'>
+          <a class='tagname' href='/tag/ruby'>
+            ruby
+            <span></span>
+          </a>
+        </div>
+        <div class='tag'>
+          <a class='tagname' href='/tag/markdown'>
+            markdown
+            <span></span>
+          </a>
         </div>
         <div id='disqus_thread'></div>
         <script>

@@ -2,87 +2,160 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 8, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
 body {
   color: #483C32;
-  font-size: 1.25em;
+  background-color: #fffff8;
+  font-family: Goudy Old Style, Times New Roman, serif;
   overflow-y: scroll;
+  line-height: 1.5em;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 a {
   color: #4B5D6C;
   text-decoration: none;
 }
-/* line 17, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 a :visited {
   color: #4B5D6C;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 #header {
-  background: #ffffff;
   margin: 24px auto;
   padding: 24px;
-  max-width: 684px;
-}
-@media (min-width: 700px) {
-  /* line 22, ../sass/screen.scss */
-  #header {
-    border-top: 1px solid black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-    border-left: 1px solid black;
-  }
+  max-width: 628px;
+  text-align: center;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
+#content {
+  max-width: 628px;
+  margin: 0 auto;
+}
+
+/* line 45, ../sass/screen.scss */
 .post {
-  background: #ffffff;
-  margin: 24px auto;
   padding: 24px;
-  width: 684px;
+  margin: 24px;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 figure {
   width: 400px;
-  outline: 1px solid #dddddd;
-  background: #f0f0f0;
+  outline: 1px solid #e2e2e2;
   display: block;
   margin: 16px auto;
   padding: 8px 0;
   text-align: center;
 }
-/* line 51, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 figure img {
   max-height: 400px;
   max-width: 368px;
   margin: 16px;
 }
-/* line 56, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 figure figcaption {
   font-size: 0.8em;
 }
 
-/* line 61, ../sass/screen.scss */
+@-moz-keyframes postPreviewClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes postPreviewClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes postPreviewClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes postPreviewCounterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes postPreviewCounterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes postPreviewCounterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* line 77, ../sass/screen.scss */
 .post-preview {
-  background: -webkit-gradient(linear, 0% 50%, 534 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(3.74532%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
-  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
-  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
-  background: linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.1) 20px, rgba(0, 0, 0, 0) 534px);
+  min-width: 200px;
+  min-height: 102px;
+  background: #e2e2e2;
+  overflow: hidden;
   position: relative;
 }
-/* line 63, ../sass/screen.scss */
-.post-preview:hover {
-  background: -webkit-gradient(linear, 0% 50%, 534 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(3.74532%, rgba(0, 0, 0, 0.15)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
-  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
-  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
-  background: linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 20px, rgba(0, 0, 0, 0) 534px);
+/* line 82, ../sass/screen.scss */
+.post-preview:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #fffff8;
+  display: none;
 }
-/* line 67, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
+.post-preview:hover:before {
+  display: block;
+  -moz-animation: postPreviewCounterclockwise 10s linear infinite forwards;
+  -webkit-animation: postPreviewCounterclockwise 10s linear infinite forwards;
+  animation: postPreviewCounterclockwise 10s linear infinite forwards;
+}
+/* line 96, ../sass/screen.scss */
+.post-preview:after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-top: 1px solid #BC1B39;
+  border-bottom: 1px solid #1bbc9e;
+  display: none;
+}
+/* line 108, ../sass/screen.scss */
+.post-preview:hover:after {
+  display: block;
+  -moz-animation: postPreviewClockwise 1s linear infinite forwards;
+  -webkit-animation: postPreviewClockwise 1s linear infinite forwards;
+  animation: postPreviewClockwise 1s linear infinite forwards;
+}
+/* line 113, ../sass/screen.scss */
 .post-preview a.post-preview-link span {
   position: absolute;
   width: 100%;
@@ -92,14 +165,17 @@ figure figcaption {
   z-index: 1;
   background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 }
-/* line 76, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
+.post-preview:hover h2 a {
+  color: #BC1B39;
+  text-shadow: none;
+}
+/* line 126, ../sass/screen.scss */
 .post-preview .tag {
   position: relative;
   z-index: 2;
-  background-color: #f8f8f8;
-  outline: #808080;
 }
-/* line 82, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .post-preview figure, .post-preview figure:after {
   position: absolute;
   top: 0;
@@ -108,67 +184,75 @@ figure figcaption {
   height: 150px;
   padding: 0;
   margin: 0;
-  outline: 0;
+  outline: none;
 }
-/* line 92, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .post-preview figure:after {
   content: "";
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
-  background: -webkit-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   background: -moz-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  background: -o-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .code {
-  max-width: 652px;
-  outline: 1px solid #dddddd;
-  border-top: 1px solid #ffffff;
-  padding: 16px;
-  background: #f0f0f0;
+  outline: 1px solid #e2e2e2;
+  border-top: 1px solid #e2e2e2;
+  padding: 24px;
+  background: #fcfcfb;
   overflow-x: scroll;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .pagination {
-  border-top: 1px dotted black;
+  border-top: 1px dotted #e2e2e2;
   margin-top: 12px;
   padding-top: 12px;
   text-align: center;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .github-widget {
   margin: 16px 0;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 #disqus_thread {
-  padding: 16px;
-  border-top: 1px dotted black;
+  padding: 24px;
+  border-top: 1px dotted #e2e2e2;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 blockquote {
   word-wrap: break-word;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .tag {
   display: inline-block;
   margin: 4px;
   padding: 4px;
+  min-width: 24px;
   font-size: 0.8em;
-  outline: 1px solid #dddddd;
-  background: #f0f0f0;
+  border: 1px solid #e2e2e2;
+  background: #fcfcfb;
   position: relative;
 }
-/* line 135, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 .tag.active {
-  background: #ffffff;
+  background: inherit;
 }
-/* line 138, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
+.tag:hover {
+  border-radius: 4px;
+  background: #fffff8;
+  border-color: transparent;
+  border-left: 1px solid #BC1B39;
+  border-right: 1px solid #BC1B39;
+}
+/* line 196, ../sass/screen.scss */
 .tag span {
   position: absolute;
   width: 100%;
@@ -177,33 +261,47 @@ blockquote {
   left: 0;
 }
 
-@media (max-width: 700px) {
-  /* line 148, ../sass/screen.scss */
+@media (max-width: 676px) {
+  /* line 206, ../sass/screen.scss */
+  body {
+    margin: 0;
+  }
+
+  /* line 209, ../sass/screen.scss */
   #header, #footer, .post, figure {
-    width: 100%;
-    padding: 0;
-    margin: 16px 0;
-    background: #ffffff;
+    width: initial;
+    margin: 0;
     outline: none;
   }
 
-  /* line 155, ../sass/screen.scss */
+  /* line 214, ../sass/screen.scss */
   .post {
-    border-top: 1px dotted black;
+    padding: 8px;
+    margin: 8px 0px;
+    border-top: 1px dotted #e2e2e2;
   }
 
-  /* line 158, ../sass/screen.scss */
+  /* line 219, ../sass/screen.scss */
+  #disqus_thread {
+    padding: 8px;
+  }
+
+  /* line 222, ../sass/screen.scss */
   .post img {
     margin: 0;
     max-height: 200px;
     max-width: 100%;
   }
 
-  /* line 164, ../sass/screen.scss */
+  /* line 227, ../sass/screen.scss */
+  .post-preview {
+    padding: 4px;
+  }
+  /* line 229, ../sass/screen.scss */
   .post-preview .tag {
     display: none;
   }
-  /* line 167, ../sass/screen.scss */
+  /* line 232, ../sass/screen.scss */
   .post-preview figure {
     display: none;
   }

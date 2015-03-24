@@ -11,7 +11,12 @@ class CustomRedcarpet < Redcarpet::Render::HTML
     CodeRay.scan(code, language).div
   end
   def image(link, title, alt_text)
-    "<figure><a href='#{link}'><img src='#{link}' alt='#{alt_text}' /></a><figcaption>#{title}</figcaption></figure>"
+    %|
+    <figure>
+      <a href='#{link}'><img src='#{link}' alt='#{alt_text}'></a>
+      <figcaption>#{title}</figcaption>
+    </figure>
+    |
   end
 end
 
@@ -72,34 +77,26 @@ $posts.each do |post|
 end
 $sorted_tags = $tags.sort_by{|tag,posts| -posts.size}
 
-system('mkdir -p staging')
-system('rm -r staging/*')
+system('rm -r staging')
+system('mkdir staging')
 
 $posts.each do |post|
-  render_to_file("staging/#{post[:path]}.html", {:title=>"Joe Frambach - #{post[:title]}"}) {
+  render_to_file("staging/#{post[:path]}.html", {:title=>"Framblog - #{post[:title]}"}) {
     render('templates/post.haml', post)
   }
 end
 
-post_pages = $posts.each_slice(5).to_a
+post_pages = $posts
 system('mkdir -p staging/page')
-post_pages.each_with_index do |posts,page|
-  render_to_file("staging/page/#{page+1}.html", {:page=>page+1, :pages=>post_pages.size, :path=>'/'}) {
-    render("templates/post_previews.haml", {:posts=>posts})
-  }
-end
+render_to_file("staging/index.html", {:path=>'/'}) {
+  render("templates/post_previews.haml", {:posts=>$posts})
+}
 
-system('mv staging/page/1.html staging/index.html')
-
+system('mkdir -p staging/tag')
 $tags.each do |tag, tag_posts|
-  system("mkdir -p staging/tag/#{tag}/page")
-  tag_pages = tag_posts.each_slice(5).to_a
-  tag_pages.each_with_index do |posts, page|
-    render_to_file("staging/tag/#{tag}/page/#{page+1}.html", {:title=>"Joe Frambach - #{tag}", :page=>page+1, :pages=>tag_pages.size, :path=>"/tag/#{tag}/", :selected_tag=>tag}) {
-      render("templates/post_previews.haml", {:posts=>posts})
-    }
-  end
-  system("mv staging/tag/#{tag}/page/1.html staging/tag/#{tag}.html")
+  render_to_file("staging/tag/#{tag}.html", {:title=>"Framblog - #{tag}", :path=>"/tag/#{tag}", :selected_tag=>tag}) {
+    render("templates/post_previews.haml", {:posts=>tag_posts})
+  }
 end
 
 system('rm public/*.html')
