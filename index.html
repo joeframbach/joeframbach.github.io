@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="preview-wrapper">
+  <h2 class="preview-block">Projects</h2>
+  {% assign projects = site.projects | sort: 'date' | reverse %}
+  {% for project in projects %}
+    <a class="preview-block"
+       href="{{ project.url | prepend: site.baseurl }}">
+      <div class="preview-image" style="background-image:url('{{ project.image }}')"></div>
+      <h3>{{ project.title }}</h3>
+      <span class="post-meta">{{ project.excerpt }}</span>
+    </a>
+  {% endfor %}
+</div>
+
+<div class="preview-wrapper">
+  <h2 class="preview-block">Contact</h2>
+  <a class="preview-block" href="mailto:hello@framba.ch">
+    <h3>via Email</h3>
+    <span class="post-meta">Recommended!</span>
+  </a>
+  <a class="preview-block" href="https://angel.co/joe-frambach">
+    <h3>via AngelList</h3>
+    <span class="post-meta">Connect with me!<br>Hire me!</span>
+  </a>
+  <a class="preview-block" href="https://www.codementor.io/joe-frambach">
+    <h3>via Codementor</h3>
+    <span class="post-meta">Book a session!</span>
+  </a>
+  <a class="preview-block" href="https://twitter.com/joeframbach">
+    <h3>via Twitter</h3>
+  </a>
+  <a class="preview-block" href="https://github.com/joeframbach">
+    <h3>via Github</h3>
+  </a>
+  <a class="preview-block" href="http://stackoverflow.com/users/1253312/joe-frambach">
+    <h3>via StackOverflow</h3>
+  </a>
+</div>
+
+<div class="preview-wrapper blog-preview-section">
+  <h2 class="preview-block">Blog</h2>
+  {% assign blog_posts = site.posts | sort: 'date' | reverse %}
+  {% for post in blog_posts %}
+    <a class="preview-block"
+       href="{{ post.url | prepend: site.baseurl }}">
+      <h3>{{ post.title }}</h3>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </a>
+  {% endfor %}
+</div>

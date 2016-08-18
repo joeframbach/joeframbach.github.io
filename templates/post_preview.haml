@@ -1,8 +1,0 @@
-.post.post-preview
-  %a.post-preview-link{:href=>"/#{path}"}
-    %span
-
-  %h2
-    %a #{title}
-  -tags.each do |tag|
-    =render_link "/tag/#{tag}", "#{tag}", false

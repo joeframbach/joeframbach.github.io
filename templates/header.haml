@@ -1,5 +1,0 @@
-#header
-  %h1
-    %a{:href=>"/"} Framblog
-  -$sorted_tags.each do |tag, posts|
-    =render_link "/tag/#{tag}", tag, true, (defined?(selected_tag) && tag==selected_tag)

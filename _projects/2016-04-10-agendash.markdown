@@ -1,0 +1,15 @@
+---
+layout: post
+title: Agendash
+date: 2016-04-10
+category: 'projects'
+image: '/images/agendash.png'
+excerpt: 'A dashboard for Agenda, the job scheduling library for node.'
+github: 'joeframbach/agendash'
+scripts:
+  - '/assets/jquery.min.js'
+  - '/assets/jquery.githubRepoWidget.min.js'
+
+---
+I've released my first npm module! It is a dashboard for [Agenda](https://github.com/rschmukler/agenda),
+a light-weight job scheduling library for Node.js. Check it out on github!

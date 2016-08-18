@@ -1,6 +1,0 @@
-source 'https://rubygems.org'
-gem 'haml'
-gem 'redcarpet'
-gem 'coderay'
-gem 'coderay_bash'
-gem 'compass'

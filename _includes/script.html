@@ -1,0 +1,7 @@
+{% unless defined?(site.includedScripts) %}
+  {% assign site.includedScripts = Set.new [] %}
+{% endunless %}
+{% unless site.includedScripts.include?(include.src) %}
+  <script type="text/javascript" src="{{include.src}}"></script>
+  {% assign site.includedScripts = site.includedScripts.add(include.src) %}
+{% endunless %}
