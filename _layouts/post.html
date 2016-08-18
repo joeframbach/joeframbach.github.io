@@ -16,4 +16,20 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.previous %}
+  <div class="preview-wrapper">
+    <h2 class="preview-block"></h2>
+    {% include project-preview.html post=page.previous.previous %}
+    {% include project-preview.html post=page.previous %}
+  </div>
+  {% endif %}
+
+  {% if page.previous %}
+  <div class="preview-wrapper">
+    <h2 class="preview-block"></h2>
+    {% include project-preview.html post=page.next %}
+    {% include project-preview.html post=page.next.next %}
+  </div>
+  {% endif %}
+
 </article>

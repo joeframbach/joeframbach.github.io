@@ -1,0 +1,12 @@
+<a class="preview-block"
+   href="{{ include.post.url | prepend: site.baseurl }}">
+  {% if include.post.category == 'projects' %}
+    <div class="preview-image" style="background-image:url('{{ include.post.image }}')"></div>
+  {% endif %}
+  <h3>{{ include.post.title }}</h3>
+  {% if include.post.category == 'projects' %}
+    <span class="post-meta">{{ include.post.excerpt }}</span>
+  {% else %}
+    <span class="post-meta">{{ include.post.date | date: "%b %-d, %Y" }}</span>
+  {% endif %}
+</a>
