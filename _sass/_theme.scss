@@ -10,7 +10,7 @@ body {
 }
 
 .preview-block {
-  flex: 0 0 ($content-width/3 - $spacing-unit*2);
+  flex: 1 0 ($content-width/4 - $spacing-unit*2);
   padding: $spacing-unit/2;
   min-height: $spacing-unit*4;
   text-decoration: none;
