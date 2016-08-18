@@ -12,4 +12,8 @@ scripts:
 
 ---
 I've released my first npm module! It is a dashboard for [Agenda](https://github.com/rschmukler/agenda),
-a light-weight job scheduling library for Node.js. Check it out on github!
+a light-weight job scheduling library for Node.js.
+
+![screenshot](https://raw.githubusercontent.com/joeframbach/agendash/master/job-details.png)
+
+### [Check it out!](https://github.com/joeframbach/agendash)

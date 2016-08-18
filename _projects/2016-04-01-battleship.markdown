@@ -17,8 +17,4 @@ They are really simple functions right now, they play randomly with no real stra
 
 Try to improve them.
 
-### Try it
-
-The base implementation uses a totally random strategy.
-
-http://joeframbach.github.io/battleship-ai/
+### [Try it](http://joeframbach.github.io/battleship-ai/)
