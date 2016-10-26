@@ -52,3 +52,29 @@ body {
     }
   }
 }
+
+blockquote {
+  padding-left: 3em;
+  padding-right: 2em;
+  position: relative;
+
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    font-size: 3em;
+  }
+
+  &:before {
+    content: '“';
+    left: 0;
+    top: 0;
+  }
+
+  &:after {
+    content: '”';
+    line-height: 0.1em;
+    bottom: 0;
+    right: 0;
+  }
+}
