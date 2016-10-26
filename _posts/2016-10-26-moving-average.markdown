@@ -238,6 +238,7 @@ is frequently presented like this:
 
 Let's run some numbers for our two implementations with
 two usage profiles:
+
 - "Write-heavy" is a benchmark that writes 1000 numbers then does one read.  
 - "Read-heavy is a benchmark that writes one number then does 1000 reads.
 
