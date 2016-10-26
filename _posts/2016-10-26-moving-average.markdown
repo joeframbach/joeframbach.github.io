@@ -228,6 +228,7 @@ who has nearly 90 million followers on Twitter,
 is frequently presented like this:
 
 > When the Biebs tweets, a few things happen:
+>
 > 1. Twitter informs 90 million people about a new tour.
 > 2. 90 million ~~people~~ bots respond to this development (nobody reads those responses).
 > 
